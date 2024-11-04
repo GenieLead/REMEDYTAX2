@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Relief Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator-container">
+        <!-- Logo on top -->
+        <img src="https://static.wixstatic.com/media/8f19c1_75a56feb453c4265b357669bcaee514b~mv2.png/v1/fill/w_94,h_84,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/2.png" alt="Logo" class="logo">
+        
+        <h1>Tax Relief Calculator</h1>
+
+        <!-- Tax Relief Form -->
+        <form id="taxForm" onsubmit="processFormWithAI(event)">
+            <h2>Basic Information</h2>
+            <label for="name">Name (Optional)</label>
+            <input type="text" id="name" placeholder="Your Name">
+
+            <label for="email">Email (Required)</label>
+            <input type="email" id="email" required placeholder="Your Email">
+
+            <label for="occupation">Occupation Type</label>
+            <select id="occupation">
+                <option value="W-2 Employee">W-2 Employee</option>
+                <option value="Self-Employed">Self-Employed</option>
+                <option value="Business Owner">Business Owner</option>
+            </select>
+
+            <h2>Tax Debt Information</h2>
+            <label for="taxDebt">Current Tax Debt Amount</label>
+            <input type="number" id="taxDebt" placeholder="Total Tax Debt Amount" required>
+
+            <label>IRS Actions Encountered</label>
+            <div class="checkbox-group">
+                <div>
+                    <input type="checkbox" id="wageGarnishment" value="Wage Garnishment">
+                    <label for="wageGarnishment">Wage Garnishment</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="irsLien" value="IRS Lien">
+                    <label for="irsLien">IRS Lien</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="irsNotices" value="IRS Notices">
+                    <label for="irsNotices">IRS Notices (Intent to Levy, Collection Letter)</label>
+                </div>
+            </div>
+
+            <label for="unpaidYears">Years with Unpaid Taxes</label>
+            <input type="number" id="unpaidYears" placeholder="Years with Unpaid Taxes" required>
+
+            <h2>Filing Information</h2>
+            <label>Are all your tax returns filed?</label>
+            <select id="taxReturns">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <label for="debtType">Type of Debt</label>
+            <select id="debtType">
+                <option value="Personal Income Tax">Personal Income Tax</option>
+                <option value="Payroll Taxes">Payroll Taxes</option>
+                <option value="Business Taxes">Business Taxes</option>
+            </select>
+
+            <h2>Financial Situation</h2>
+            <label for="monthlyIncome">Monthly Income</label>
+            <input type="number" id="monthlyIncome" placeholder="Monthly Income" required>
+
+            <label for="monthlyExpenses">Monthly Expenses</label>
+            <input type="number" id="monthlyExpenses" placeholder="Monthly Expenses" required>
+
+            <label>Assets Owned</label>
+            <div class="checkbox-group">
+                <div>
+                    <input type="checkbox" id="home" value="Home">
+                    <label for="home">Home</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="vehicle" value="Vehicle">
+                    <label for="vehicle">Vehicle</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="savings" value="Savings">
+                    <label for="savings">Savings</label>
+                </div>
+            </div>
+
+            <h2>Employment and Financial Stability</h2>
+            <label for="employmentStatus">Current Employment Status</label>
+            <select id="employmentStatus">
+                <option value="Employed">Employed</option>
+                <option value="Self-Employed">Self-Employed</option>
+                <option value="Unemployed">Unemployed</option>
+            </select>
+
+            <label>Has your financial situation worsened recently?</label>
+            <select id="financialWorsened">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <h2>Previous Resolution Attempts</h2>
+            <label>Have you worked with a tax professional before?</label>
+            <select id="workedWithTaxPro">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <label>Have you previously tried to settle with the IRS?</label>
+            <select id="settleWithIRS">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <button type="submit">Get Your Tax Relief Options</button>
+        </form>
+
+        <!-- Result Section -->
+        <div id="result" class="result-section"></div>
+
+        <!-- Calendly CTA Button -->
+        <div id="calendly-link" style="display: none;">
+            <a href="https://calendly.com/growthmaniac" class="cta-button" target="_blank">Talk with an Expert</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
