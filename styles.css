@@ -2,11 +2,16 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     margin: 0;
-    padding: 20px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
 .calculator-container {
     max-width: 600px;
+    width: 100%; /* Ensures responsive sizing */
     margin: 0 auto;
     background: #fff;
     padding: 20px;
